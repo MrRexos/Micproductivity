@@ -19,9 +19,10 @@ export default function LandingPage() {
       <motion.img
         src={logo}
         alt="MicProductivity"
-        className="w-40 h-40 object-contain"
-        initial={{ opacity: 0, scale: 1.8 }}
-        animate={{ opacity: 1, scale: 2 }}
+        className="w-45 sm:w-52 md:w-58 lg:w-64 xl:w-72 2xl:w-80 h-auto object-contain"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
       />
 
       {/* Headline */}
