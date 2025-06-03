@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import logo from "/src/assets/logo_big.png";
 
 
 // Minimalistic one‑screen landing page for Mic Productivity
@@ -14,12 +15,21 @@ const fadeIn = {
 export default function LandingPage() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center  bg-[#f0eeed] px-4 relative overflow-hidden">
+
+      <motion.img
+        src={logo}
+        alt="MicProductivity"
+        className="w-40 h-40 object-contain"
+        initial={{ opacity: 0, scale: 1.8 }}
+        animate={{ opacity: 1, scale: 2 }}
+      />
+
       {/* Headline */}
       <motion.h1
         variants={fadeIn}
         initial="hidden"
         animate="show"
-        className="text-5xl md:text-7xl font-semibold tracking-tight text-center mb-6 text-[#232323"
+        className="text-5xl md:text-7xl font-semibold tracking-tight text-center mb-3 text-[#232323"
       >
         MicProductivity
       </motion.h1>
@@ -32,7 +42,7 @@ export default function LandingPage() {
         transition={{ delay: 0.3 }}
         className="max-w-xl text-center text-lg md:text-xl mb-10 text-[#9b9c99]"
       >
-        Maximiza tu flujo de trabajo con IA en cada clic — potencia, claridad y simplicidad en una sola plataforma.
+        Innovation Center Productivity
       </motion.p>
 
       {/* Call to Action */}
@@ -42,12 +52,29 @@ export default function LandingPage() {
         animate="show"
         transition={{ delay: 0.6 }}
       >
+
+      {/* Call to Action (opens PDF) -------------------------------------*/}
+      <motion.a
+        variants={fadeIn}
+        initial="hidden"
+        animate="show"
+        transition={{ delay: 0.6 }}
+        href="/docs/portfolio.pdf" // <-- coloca tu PDF en /public/docs
+        target="_blank"
+        rel="noopener noreferrer"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="mt-12 inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#232323] text-white text-xs  focus:outline-none focus:ring-4 focus:ring-[#232323]/40"
+      >
+        PDF
+        <ArrowUpRight size={15} strokeWidth={2} />
+      </motion.a>
        
       </motion.div>
 
       {/* Footer */}
       <footer className="absolute bottom-4 text-xs text-gray-600">
-        © {new Date().getFullYear()} Mic Productivity. Todos los derechos reservados.
+        © {new Date().getFullYear()} MicProductivity. Todos los derechos reservados.
       </footer>
     </div>
   );
