@@ -1,7 +1,8 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import logo from "/src/assets/logo_big.png";
+import privacyPdf from "/src/assets/PROCEDIMIENTO_Politica_Privacidad_Web_250521[1].pdf";
 
 
 // Minimalistic one‑screen landing page for Mic Productivity
@@ -16,7 +17,7 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center  bg-[#f0eeed] px-4 relative overflow-hidden">
 
-      <motion.img
+      <Motion.img
         src={logo}
         alt="MicProductivity"
         className="w-45 sm:w-52 md:w-58 lg:w-64 xl:w-72 2xl:w-80 h-auto object-contain"
@@ -38,7 +39,7 @@ export default function LandingPage() {
       */}
 
       {/* Tagline */}
-      <motion.p
+      <Motion.p
         variants={fadeIn}
         initial="hidden"
         animate="show"
@@ -46,10 +47,10 @@ export default function LandingPage() {
         className="max-w-xl text-center text-lg md:text-xl mb-10 text-[#9b9c99]"
       >
         Asesoramiento y Gestión de la transformación digital
-      </motion.p>
+      </Motion.p>
 
       {/* Call to Action */}
-      <motion.div
+      <Motion.div
         variants={fadeIn}
         initial="hidden"
         animate="show"
@@ -57,12 +58,12 @@ export default function LandingPage() {
       >
 
         {/* Call to Action (opens PDF) -------------------------------------*/}
-        <motion.a
+        <Motion.a
           variants={fadeIn}
           initial="hidden"
           animate="show"
           transition={{ delay: 0.6 }}
-          href="/docs/portfolio.pdf" // <-- coloca tu PDF en /public/docs
+          href={privacyPdf}
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.05 }}
@@ -71,9 +72,9 @@ export default function LandingPage() {
         >
           PDF
           <ArrowUpRight size={15} strokeWidth={2} />
-        </motion.a>
+        </Motion.a>
 
-      </motion.div>
+      </Motion.div>
 
       {/* Footer */}
       <footer className="absolute bottom-4 text-xs text-gray-600">
