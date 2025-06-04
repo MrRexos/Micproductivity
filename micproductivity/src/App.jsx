@@ -81,7 +81,7 @@ export default function LandingPage() {
 
       <footer className="absolute bottom-4 text-xs text-gray-600 text-center">
         <div>Contacto: info@micproductivity.com</div>
-        <div>© {new Date().getFullYear()} MicProductivity. Todos los derechos reservados.</div>
+        <div>© {new Date().getFullYear()} MICProductivity. Todos los derechos reservados.</div>
       </footer>
     </div>
   );
