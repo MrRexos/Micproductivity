@@ -26,14 +26,16 @@ export default function LandingPage() {
       />
 
       {/* Headline */}
-      <motion.h1
-        variants={fadeIn}
-        initial="hidden"
-        animate="show"
-        className="text-5xl md:text-7xl font-semibold tracking-tight text-center mb-3 text-[#232323"
-      >
-        MicProductivity
-      </motion.h1>
+      {/*
+        <motion.h1
+          variants={fadeIn}
+          initial="hidden"
+          animate="show"
+          className="text-5xl md:text-7xl font-semibold tracking-tight text-center mb-3 text-[#232323"
+        >
+          MicProductivity
+        </motion.h1>
+      */}
 
       {/* Tagline */}
       <motion.p
@@ -43,7 +45,7 @@ export default function LandingPage() {
         transition={{ delay: 0.3 }}
         className="max-w-xl text-center text-lg md:text-xl mb-10 text-[#9b9c99]"
       >
-        Innovation Center Productivity
+        Asesoramiento y Gestión de la transformación digital
       </motion.p>
 
       {/* Call to Action */}
@@ -54,23 +56,23 @@ export default function LandingPage() {
         transition={{ delay: 0.6 }}
       >
 
-      {/* Call to Action (opens PDF) -------------------------------------*/}
-      <motion.a
-        variants={fadeIn}
-        initial="hidden"
-        animate="show"
-        transition={{ delay: 0.6 }}
-        href="/docs/portfolio.pdf" // <-- coloca tu PDF en /public/docs
-        target="_blank"
-        rel="noopener noreferrer"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="mt-12 inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#232323] text-white text-xs  focus:outline-none focus:ring-4 focus:ring-[#232323]/40"
-      >
-        PDF
-        <ArrowUpRight size={15} strokeWidth={2} />
-      </motion.a>
-       
+        {/* Call to Action (opens PDF) -------------------------------------*/}
+        <motion.a
+          variants={fadeIn}
+          initial="hidden"
+          animate="show"
+          transition={{ delay: 0.6 }}
+          href="/docs/portfolio.pdf" // <-- coloca tu PDF en /public/docs
+          target="_blank"
+          rel="noopener noreferrer"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="mt-12 inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#232323] text-white text-xs  focus:outline-none focus:ring-4 focus:ring-[#232323]/40"
+        >
+          PDF
+          <ArrowUpRight size={15} strokeWidth={2} />
+        </motion.a>
+
       </motion.div>
 
       {/* Footer */}
