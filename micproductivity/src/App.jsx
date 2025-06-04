@@ -20,7 +20,8 @@ export default function LandingPage() {
       <Motion.img
         src={logo}
         alt="MicProductivity"
-        className="w-45 sm:w-52 md:w-58 lg:w-64 xl:w-72 2xl:w-80 h-auto object-contain"
+        className="w-100 sm:w-100 md:w-110 lg:w-120 xl:w-130 2xl:w-140 h-auto object-contain"
+
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -46,7 +47,7 @@ export default function LandingPage() {
         transition={{ delay: 0.3 }}
         className="max-w-xl text-center text-lg md:text-xl mb-10 text-[#9b9c99]"
       >
-        Asesoramiento y Gestión de la transformación digital
+        Asesoramiento y Gestión de la Transformación Digital
       </Motion.p>
 
       {/* Call to Action */}
@@ -70,15 +71,17 @@ export default function LandingPage() {
           whileTap={{ scale: 0.95 }}
           className="mt-12 inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#232323] text-white text-xs  focus:outline-none focus:ring-4 focus:ring-[#232323]/40"
         >
-          PDF
+          POLÍTICA DE PRIVACIDAD
           <ArrowUpRight size={15} strokeWidth={2} />
         </Motion.a>
 
       </Motion.div>
 
       {/* Footer */}
-      <footer className="absolute bottom-4 text-xs text-gray-600">
-        © {new Date().getFullYear()} MicProductivity. Todos los derechos reservados.
+
+      <footer className="absolute bottom-4 text-xs text-gray-600 text-center">
+        <div>Contacto: info@micproductivity.com</div>
+        <div>© {new Date().getFullYear()} MicProductivity. Todos los derechos reservados.</div>
       </footer>
     </div>
   );
