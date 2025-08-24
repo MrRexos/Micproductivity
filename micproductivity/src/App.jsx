@@ -3,7 +3,12 @@ import { motion as Motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import logo from "/src/assets/logo_big.png";
 import privacyPdf from "/src/assets/PROCEDIMIENTO_Politica_Privacidad_Web_250521[1].pdf";
-
+import prosciLogo from "/src/assets/prosci.png";
+import pmiLogo from "/src/assets/pmi.png";
+import prince2Logo from "/src/assets/prince2.png";
+import psmLogo from "/src/assets/psmI.png";
+import xLogo from "/src/assets/XLogo.png";
+import linkedinLogo from "/src/assets/linkedinLogo.png";
 
 // Minimalistic one‑screen landing page for Mic Productivity
 // Inspired by the aesthetic of OpenAI — dark background, restrained color palette, generous spacing.
@@ -45,9 +50,9 @@ export default function LandingPage() {
         initial="hidden"
         animate="show"
         transition={{ delay: 0.3 }}
-        className="max-w-xl text-center text-lg md:text-xl mb-10 text-[#9b9c99]"
+        className="max-w-2xl text-center text-lg md:text-xl mb-10 text-[#9b9c99]"
       >
-        Asesoramiento y Gestión de la Transformación Digital
+        Transformando la manera de trabajar de las organizaciones a través de la gestión del cambio y la adopción de herramientas tecnológicas
       </Motion.p>
 
       {/* Call to Action */}
@@ -59,7 +64,7 @@ export default function LandingPage() {
       >
 
         {/* Call to Action (opens PDF) -------------------------------------*/}
-        <Motion.a
+        {/*  <Motion.a
           variants={fadeIn}
           initial="hidden"
           animate="show"
@@ -73,14 +78,40 @@ export default function LandingPage() {
         >
           POLÍTICA DE PRIVACIDAD
           <ArrowUpRight size={15} strokeWidth={2} />
-        </Motion.a>
+        </Motion.a> */}
 
       </Motion.div>
+
+      {/* Certificaciones */}
+      <section className="w-full mt-14  py-8">
+        <div className="max-w-5xl mx-auto px-6">
+          <h3 className="text-center text-sm md:text-base font-medium text-gray-500 mb-4">Certificaciones</h3>
+          <div className="flex items-center justify-center gap-10 md:gap-16 flex-wrap">
+            <img src={prosciLogo} alt="Prosci" className="h-20 md:h-24 object-contain" />
+            <img src={pmiLogo} alt="PMI" className="h-12 md:h-15  object-contain" />
+            <img src={prince2Logo} alt="PRINCE2" className="h-12 md:h-15  object-contain" />
+            <img src={psmLogo} alt="PSM I" className="h-14 md:h-22 object-contain" />
+          </div>
+        </div>
+      </section>
 
       {/* Footer */}
 
       <footer className="absolute bottom-4 text-xs text-gray-600 text-center">
-        <div>Contacto: info@micproductivity.com</div>
+        <div className="flex items-center justify-center gap-3 mb-2">
+          <img src={xLogo} alt="X" className="h-5 w-5 object-contain" />
+          <img src={linkedinLogo} alt="LinkedIn" className="h-5 w-5 object-contain" />
+        </div>
+        <div className="flex items-center justify-center gap-1">Contacto: info@micproductivity.com •{" "}
+          <a
+            href={privacyPdf}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline inline-flex items-center gap-1"
+          >
+            Política de privacidad <ArrowUpRight size={15} strokeWidth={2} />
+          </a>
+        </div>
         <div>© {new Date().getFullYear()} MICProductivity. Todos los derechos reservados.</div>
       </footer>
     </div>
