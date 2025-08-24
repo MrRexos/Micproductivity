@@ -83,7 +83,13 @@ export default function LandingPage() {
       </Motion.div>
 
       {/* Certificaciones */}
-      <section className="w-full mt-14  py-8">
+      <Motion.section
+        className="w-full mt-14  py-8"
+        variants={fadeIn}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <div className="max-w-5xl mx-auto px-6">
           <h3 className="text-center text-sm md:text-base font-medium text-gray-500 mb-4">Certificaciones</h3>
           <div className="flex items-center justify-center gap-10 md:gap-16 flex-wrap">
@@ -93,7 +99,7 @@ export default function LandingPage() {
             <img src={psmLogo} alt="PSM I" className="h-14 md:h-22 object-contain" />
           </div>
         </div>
-      </section>
+      </Motion.section>
 
       {/* Footer */}
 
