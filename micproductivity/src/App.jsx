@@ -9,6 +9,7 @@ import prince2Logo from "/src/assets/prince2.png";
 import psmLogo from "/src/assets/psmI.png";
 import xLogo from "/src/assets/XLogo.png";
 import linkedinLogo from "/src/assets/linkedinLogo.png";
+import CookieConsent from "./components/CookieConsent.jsx";
 
 // Minimalistic one‑screen landing page for Mic Productivity
 // Inspired by the aesthetic of OpenAI — dark background, restrained color palette, generous spacing.
@@ -20,17 +21,20 @@ const fadeIn = {
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center  bg-[#f0eeed] px-4 relative overflow-hidden">
+    <div className="min-h-screen flex flex-col bg-[#f0eeed] overflow-x-hidden">
+      <CookieConsent />
+      
+      <main className="flex-1  px-4 flex flex-col items-center justify-center">
 
-      <Motion.img
-        src={logo}
-        alt="MicProductivity"
-        className="w-100 sm:w-100 md:w-110 lg:w-120 xl:w-130 2xl:w-140 h-auto object-contain"
+        <Motion.img
+          src={logo}
+          alt="MicProductivity"
+          className="mt-12 w-100 sm:w-100 md:w-110 lg:w-120 xl:w-130 2xl:w-140 h-auto object-contain"
 
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      />
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        />
 
       {/* Headline */}
       {/*
@@ -94,19 +98,38 @@ export default function LandingPage() {
           <h3 className="text-center text-sm md:text-base font-medium text-gray-500 mb-4">Certificaciones</h3>
           <div className="flex items-center justify-center gap-10 md:gap-16 flex-wrap">
             <img src={prosciLogo} alt="Prosci" className="h-20 md:h-24 object-contain" />
-            <img src={pmiLogo} alt="PMI" className="h-12 md:h-15  object-contain" />
-            <img src={prince2Logo} alt="PRINCE2" className="h-12 md:h-15  object-contain" />
+            <img src={pmiLogo} alt="PMI" className="h-12 md:h-18  object-contain" />
+            <img src={prince2Logo} alt="PRINCE2" className="h-12 md:h-14  object-contain" />
             <img src={psmLogo} alt="PSM I" className="h-14 md:h-22 object-contain" />
           </div>
         </div>
       </Motion.section>
 
+      </main>
+
       {/* Footer */}
 
-      <footer className="absolute bottom-4 text-xs text-gray-600 text-center">
+      <footer className="text-xs text-gray-600 text-center py-4">
         <div className="flex items-center justify-center gap-3 mb-2">
-          <img src={xLogo} alt="X" className="h-5 w-5 object-contain" />
-          <img src={linkedinLogo} alt="LinkedIn" className="h-5 w-5 object-contain" />
+          <a
+            href="https://x.com/micproductivity"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="X: @micproductivity"
+            className="inline-flex"
+          >
+            <img src={xLogo} alt="" className="h-5 w-5 object-contain cursor-pointer" />
+          </a>
+
+          <a
+            href="https://www.linkedin.com/company/MICProductivity"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn: MICProductivity"
+            className="inline-flex"
+          >
+            <img src={linkedinLogo} alt="" className="h-5 w-5 object-contain cursor-pointer" />
+          </a>
         </div>
         <div className="flex items-center justify-center gap-1">Contacto: info@micproductivity.com •{" "}
           <a
@@ -120,8 +143,10 @@ export default function LandingPage() {
         </div>
         <div>© {new Date().getFullYear()} MICProductivity. Todos los derechos reservados.</div>
       </footer>
-    </div>
-  );
+
+      
+      </div>
+      );
 }
 
 
